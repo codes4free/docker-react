@@ -1,6 +1,6 @@
 sudo: required
 language: generic
-CI=true
+ - CI=true
 services:
  - docker 
 
