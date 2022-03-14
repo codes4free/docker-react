@@ -15,9 +15,9 @@ deploy:
   skip_cleanup: true
   edge: true
   provider: elasticbeanstalk
-  region: "us-east-1a"
+  region: "us-east-1"
   app: "docker-react"
-  env: "Dockerreact-dev"
+  EnvironmentName: 'Dockerreact-dev'
   bucket_name: "elasticbeanstalk-us-east-1-596222049206"
   bucket_path: "docker-react"
   on:
