@@ -13,6 +13,7 @@ script:
 
 deploy:
   skip_cleanup: true
+  edge: true
   provider: elasticbeanstalk
   region: "us-east-1"
   app: "docker-react"
