@@ -1,5 +1,6 @@
 sudo: required
 language: generic
+ - CI=true
  
 services:
  - docker 
@@ -9,7 +10,7 @@ before_install:
  - docker build -t d6lab/docker-react -f Dockerfile.dev .
 
 script:
- - docker run -e CI=true d6lab/docker-react npm run test -- --coverage
+ - docker run -e CI=true d6lab/docker-react npm run test
 
 deploy:
   skip_cleanup: true
