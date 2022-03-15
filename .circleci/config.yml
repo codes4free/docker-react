@@ -1,0 +1,15 @@
+version: 2.1
+
+    jobs:
+      - test
+
+
+
+jobs:
+  test:
+    docker:
+      - image: d6lab/docker-react
+      steps:
+      - checkout
+      - run: npm run test -- --coverage
+     
