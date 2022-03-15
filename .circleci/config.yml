@@ -2,10 +2,10 @@ orbs:
   aws-cli: circleci/aws-cli@2.1.0
 
 jobs:
-  example-job:
+  build_deploy:
     docker:
       # replace with your preferred image
-      - image: cimg/base:stable
+      - image: cimg/node:17.7.1 
     steps:
       - aws-cli/setup:
           aws-region: us-east-1 
@@ -18,4 +18,10 @@ jobs:
 workflows:
   example-workflow:
     jobs:
-      - example-job
+      - - aws-elastic-beanstalk/deploy:
+            app-dir: . 
+            application-name: docker-react 
+            description: Course hardcore mdf
+            environment-name: docker-react-env 
+            image: cimg/node:17.7.1 
+            label: circleci-test 
