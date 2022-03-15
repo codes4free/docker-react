@@ -14,12 +14,20 @@ script:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  region: "us-east-1"
-  app: "docker-react"
-  env: "docker-react-dev"
-  bucket_name: "elasticbeanstalk-us-east-1-596222049206"
-  bucket_path: "docker-react"
+  region: us-east-1
+  app: docker-react
+  env: docker-react-dev
+  bucket_name: elasticbeanstalk-us-east-1-596222049206
+  bucket_path: docker-react
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
+  Sid: ElasticBeanstalkHealthAccess
+  Action: 
+  - "elasticbeanstalk:PutInstanceStatitsics"
+  Effect: Allow
+  Resource: 
+  - "arn:aws:elasticbeanstalk:us-east-1:596222049206:*.*:application" 
+  - "arn:aws:elasticbeanstalk:us-east-1:596222049206:*.*:environment"
+
