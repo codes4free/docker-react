@@ -23,11 +23,7 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
-  Sid: ElasticBeanstalkHealthAccess
-  Action: 
-  - "elasticbeanstalk:PutInstanceStatistics"
-  Effect: Allow
-  Resource: 
-  - "arn:aws:elasticbeanstalk:us-east-1:596222049206:*.*:application" 
-  - "arn:aws:elasticbeanstalk:us-east-1:596222049206:*.*:environment"
+  version_label: $TRAVIS_COMMIT
+  description: $TRAVIS_COMMIT
+  
 
