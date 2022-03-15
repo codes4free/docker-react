@@ -25,7 +25,7 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   Sid: ElasticBeanstalkHealthAccess
   Action: 
-  - "elasticbeanstalk:PutInstanceStatitsics"
+  - "elasticbeanstalk:PutInstanceStatistics"
   Effect: Allow
   Resource: 
   - "arn:aws:elasticbeanstalk:us-east-1:596222049206:*.*:application" 
