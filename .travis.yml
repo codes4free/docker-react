@@ -12,7 +12,6 @@ script:
   - docker run -e CI=true d6lab/docker-react npm run test -- --coverage
 
 deploy:
-  edge: true
   skip_cleanup: true
   provider: elasticbeanstalk
   region: "us-east-1"
