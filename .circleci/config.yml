@@ -18,7 +18,7 @@ jobs:
 workflows:
   example-workflow:
     jobs:
-      - - aws-elastic-beanstalk/deploy:
+      - - aws-elastic-beanstalk/docker-react:
             app-dir: . 
             application-name: docker-react 
             description: Course hardcore mdf
