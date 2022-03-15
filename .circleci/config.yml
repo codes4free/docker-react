@@ -1,15 +1,15 @@
-version: 2.1
-
-    jobs:
-      - test
-
-
-
 jobs:
-  test:
+  example-job:
     docker:
-      - image: d6lab/docker-react
-      steps:
-      - checkout
-      - run: npm run test -- --coverage
-     
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - github-cli/setup:
+          hostname: codes4free/docker-react 
+          token: CircleCI 
+          version: '2.3' 
+
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
